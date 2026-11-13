@@ -1,0 +1,126 @@
+[
+  {
+    "id": "DS-001",
+    "deliveryReference": "DLV-2026-001",
+    "barangay": "Balanacan",
+    "date": "2026-11-10",
+    "items": [
+      { "name": "Rice", "quantity": 15, "unit": "sacks" },
+      { "name": "Canned goods", "quantity": 12, "unit": "boxes" },
+      { "name": "Bottled water", "quantity": 6, "unit": "cases" }
+    ],
+    "personnel": "Delivery Team A (sample)",
+    "familiesServed": 0,
+    "status": "Out for Delivery",
+    "remarks": "Sample record. Families served stays at zero until the team reports the drop-off.",
+    "routeId": "RT-001",
+    "requestId": "RR-2026-001",
+    "inventoryDeducted": false,
+    "updatedAt": "2026-11-10T09:05:00+08:00"
+  },
+  {
+    "id": "DS-002",
+    "deliveryReference": "DLV-2026-002",
+    "barangay": "Capayang",
+    "date": "2026-11-06",
+    "items": [
+      { "name": "First-aid kits", "quantity": 6, "unit": "kits" },
+      { "name": "Hygiene kits", "quantity": 10, "unit": "kits" }
+    ],
+    "personnel": "Delivery Team B (sample)",
+    "familiesServed": 15,
+    "status": "Delivered",
+    "remarks": "Sample record. The current inventory file already reflects this completed issue.",
+    "routeId": "RT-002",
+    "requestId": "RR-2026-005",
+    "inventoryDeducted": true,
+    "updatedAt": "2026-11-06T17:05:00+08:00"
+  },
+  {
+    "id": "DS-003",
+    "deliveryReference": "DLV-2026-003",
+    "barangay": "Gitnang Bayan",
+    "date": "2026-11-07",
+    "items": [
+      { "name": "Blankets", "quantity": 10, "unit": "pieces" }
+    ],
+    "personnel": "Packing Team (sample)",
+    "familiesServed": 22,
+    "status": "Delivered",
+    "remarks": "Sample record. Blankets were handed out at the evacuation classroom.",
+    "routeId": "RT-005",
+    "requestId": "RR-2026-004",
+    "inventoryDeducted": true,
+    "updatedAt": "2026-11-07T16:40:00+08:00"
+  },
+  {
+    "id": "DS-004",
+    "deliveryReference": "DLV-2026-004",
+    "barangay": "Sayao",
+    "date": "2026-11-12",
+    "items": [
+      { "name": "Rice", "quantity": 10, "unit": "sacks" },
+      { "name": "Canned goods", "quantity": 8, "unit": "boxes" }
+    ],
+    "personnel": "Delivery Team A (sample)",
+    "familiesServed": 0,
+    "status": "Scheduled",
+    "remarks": "Sample record. Shelter materials are mentioned on the request and are not deducted from inventory.",
+    "routeId": "RT-003",
+    "requestId": "RR-2026-007",
+    "inventoryDeducted": false,
+    "updatedAt": "2026-11-09T09:45:00+08:00"
+  },
+  {
+    "id": "DS-005",
+    "deliveryReference": "DLV-2026-005",
+    "barangay": "Sumangga",
+    "date": "2026-11-09",
+    "items": [
+      { "name": "Bottled water", "quantity": 8, "unit": "cases" }
+    ],
+    "personnel": "Delivery Team A (sample)",
+    "familiesServed": 20,
+    "status": "Partially Delivered",
+    "remarks": "Sample record. Water reached 20 families. Food packs are not on this delivery.",
+    "routeId": "RT-006",
+    "requestId": "RR-2026-009",
+    "inventoryDeducted": true,
+    "updatedAt": "2026-11-09T18:15:00+08:00"
+  },
+  {
+    "id": "DS-006",
+    "deliveryReference": "DLV-2026-006",
+    "barangay": "Bintakay",
+    "date": "2026-11-11",
+    "items": [
+      { "name": "Rice", "quantity": 20, "unit": "sacks" },
+      { "name": "Canned goods", "quantity": 15, "unit": "boxes" }
+    ],
+    "personnel": "Delivery Team B (sample)",
+    "familiesServed": 0,
+    "status": "Preparing",
+    "remarks": "Sample record. Quantities are still inside the stockroom, so inventory has not been deducted.",
+    "routeId": "RT-004",
+    "requestId": "RR-2026-006",
+    "inventoryDeducted": false,
+    "updatedAt": "2026-11-10T08:30:00+08:00"
+  },
+  {
+    "id": "DS-007",
+    "deliveryReference": "DLV-2026-007",
+    "barangay": "Paye",
+    "date": "2026-11-05",
+    "items": [
+      { "name": "Bottled water", "quantity": 4, "unit": "cases" }
+    ],
+    "personnel": "Delivery Team B (sample)",
+    "familiesServed": 0,
+    "status": "Cancelled",
+    "remarks": "Sample record. Cancelled after the related request was rejected. Stock was not deducted.",
+    "routeId": "",
+    "requestId": "RR-2026-008",
+    "inventoryDeducted": false,
+    "updatedAt": "2026-11-05T11:10:00+08:00"
+  }
+]

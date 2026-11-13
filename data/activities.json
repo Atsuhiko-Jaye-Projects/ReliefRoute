@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ACT-008",
+    "at": "2026-11-10T09:10:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Updated a delivery route",
+    "detail": "RT-001 is out for delivery to Balanacan.",
+    "module": "routes",
+    "barangay": "Balanacan"
+  },
+  {
+    "id": "ACT-007",
+    "at": "2026-11-10T08:30:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Updated a distribution",
+    "detail": "DS-006 for Bintakay is being prepared.",
+    "module": "distribution",
+    "barangay": "Bintakay"
+  },
+  {
+    "id": "ACT-006",
+    "at": "2026-11-10T07:50:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Submitted a relief request",
+    "detail": "RR-2026-011 was recorded for Market Site.",
+    "module": "requests",
+    "barangay": "Market Site"
+  },
+  {
+    "id": "ACT-005",
+    "at": "2026-11-09T18:15:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Updated a distribution",
+    "detail": "DS-005 was marked partially delivered in Sumangga. 20 families served.",
+    "module": "distribution",
+    "barangay": "Sumangga"
+  },
+  {
+    "id": "ACT-004",
+    "at": "2026-11-09T11:15:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Submitted a relief request",
+    "detail": "RR-2026-003 was recorded for Hinadharan and is pending review.",
+    "module": "requests",
+    "barangay": "Hinadharan"
+  },
+  {
+    "id": "ACT-003",
+    "at": "2026-11-08T15:20:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Updated request status",
+    "detail": "RR-2026-002 for Butansapa was approved.",
+    "module": "requests",
+    "barangay": "Butansapa"
+  },
+  {
+    "id": "ACT-002",
+    "at": "2026-11-07T16:40:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Completed a distribution",
+    "detail": "DS-003 delivered blankets in Gitnang Bayan to 22 families.",
+    "module": "distribution",
+    "barangay": "Gitnang Bayan"
+  },
+  {
+    "id": "ACT-001",
+    "at": "2026-11-06T17:05:00+08:00",
+    "actor": "Demo Coordinator",
+    "action": "Completed a distribution",
+    "detail": "DS-002 delivered medical and hygiene supplies in Capayang.",
+    "module": "distribution",
+    "barangay": "Capayang"
+  }
+]

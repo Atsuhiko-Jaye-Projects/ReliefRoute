@@ -1,0 +1,68 @@
+[
+  {
+    "id": "INV-001",
+    "name": "Rice",
+    "category": "Food",
+    "quantity": 80,
+    "unit": "sacks",
+    "reorderLevel": 25,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample on-hand count after earlier completed issues.",
+    "updatedAt": "2026-11-08"
+  },
+  {
+    "id": "INV-002",
+    "name": "Canned goods",
+    "category": "Food",
+    "quantity": 140,
+    "unit": "boxes",
+    "reorderLevel": 40,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample on-hand count.",
+    "updatedAt": "2026-11-08"
+  },
+  {
+    "id": "INV-003",
+    "name": "Bottled water",
+    "category": "Water",
+    "quantity": 18,
+    "unit": "cases",
+    "reorderLevel": 24,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample count is below the reorder level.",
+    "updatedAt": "2026-11-09"
+  },
+  {
+    "id": "INV-004",
+    "name": "Hygiene kits",
+    "category": "Hygiene",
+    "quantity": 36,
+    "unit": "kits",
+    "reorderLevel": 20,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample on-hand count.",
+    "updatedAt": "2026-11-06"
+  },
+  {
+    "id": "INV-005",
+    "name": "Blankets",
+    "category": "Shelter",
+    "quantity": 12,
+    "unit": "pieces",
+    "reorderLevel": 20,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample count is below the reorder level.",
+    "updatedAt": "2026-11-07"
+  },
+  {
+    "id": "INV-006",
+    "name": "First-aid kits",
+    "category": "Health",
+    "quantity": 16,
+    "unit": "kits",
+    "reorderLevel": 10,
+    "location": "Municipal stockroom (sample)",
+    "lastNote": "Sample on-hand count.",
+    "updatedAt": "2026-11-06"
+  }
+]

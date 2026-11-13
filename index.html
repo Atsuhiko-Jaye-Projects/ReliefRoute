@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ReliefRoute helps Mogpog coordinate disaster relief requests, priority areas, and delivery records.">
+  <meta name="theme-color" content="#1E293B">
+  <title>ReliefRoute · People to a Safer Tomorrow</title>
+  <link rel="icon" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-rr" href="#content">Skip to content</a>
+  <header class="rr-public-nav">
+    <nav class="container py-3 d-flex flex-wrap align-items-center gap-3" aria-label="Public">
+      <a class="rr-brand p-0" href="index.html">
+        <span class="rr-mark" aria-hidden="true"><i class="bi bi-signpost-2"></i></span>
+        <span><strong>ReliefRoute</strong><small>Mogpog, Marinduque</small></span>
+      </a>
+      <div class="ms-lg-auto d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-light" href="#modules">What it does</a>
+        <a class="btn btn-rr-accent" href="pages/login.html">Sign in</a>
+      </div>
+    </nav>
+  </header>
+  <main id="content">
+    <section class="rr-hero">
+      <div class="container py-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="rr-dash mb-3" aria-hidden="true"></div>
+            <p class="text-uppercase small fw-bold mb-2" style="color:#fdba74; letter-spacing:.06em;">Disaster relief coordination</p>
+            <h1 class="display-6 fw-bold">People to a Safer Tomorrow.</h1>
+            <p class="lead mt-3 mb-4" style="color:#e2e8f0;">ReliefRoute gives the municipal team and barangay representatives one place to record relief requests, mark priority areas, and follow whether goods are still pending or already delivered.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-rr-accent btn-lg" href="pages/login.html">Open the prototype</a>
+              <a class="btn btn-outline-light btn-lg" href="pages/dashboard.html">Go to dashboard</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="rr-public-card text-dark">
+              <h2 class="h5">Built for Mogpog</h2>
+              <p class="mb-2">Sample records use the public barangay names of Mogpog, Marinduque. The households, counts, and deliveries are fictional.</p>
+              <p class="mb-0 small text-secondary">ReliefRoute does not replace official emergency response, professional disaster assessment, or decisions made by authorized government personnel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container py-5" id="modules" aria-labelledby="modules-title">
+      <h2 id="modules-title" class="h3 mb-4">Three working operations</h2>
+      <div class="row g-3">
+        <article class="col-12 col-md-4">
+          <div class="rr-public-card">
+            <i class="bi bi-inboxes fs-3" aria-hidden="true"></i>
+            <h3 class="h5 mt-2">Relief requests</h3>
+            <p class="mb-0">Submit a request with a reference number, barangay, date, assistance type, affected families, priority, and status. Search, filter, edit, and add coordinator remarks.</p>
+          </div>
+        </article>
+        <article class="col-12 col-md-4">
+          <div class="rr-public-card">
+            <i class="bi bi-geo-alt fs-3" aria-hidden="true"></i>
+            <h3 class="h5 mt-2">Priority areas</h3>
+            <p class="mb-0">Track which barangays still need help, what was reported, and which request a sample area is linked to. These labels are coordination notes, not official severity scores.</p>
+          </div>
+        </article>
+        <article class="col-12 col-md-4">
+          <div class="rr-public-card">
+            <i class="bi bi-truck fs-3" aria-hidden="true"></i>
+            <h3 class="h5 mt-2">Delivery and distribution</h3>
+            <p class="mb-0">Create a delivery reference, assign personnel and goods, and update the status from scheduled through delivered, partial, or cancelled.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="container pb-5" aria-labelledby="roles-title">
+      <h2 id="roles-title" class="h3 mb-4">Who uses it in the demo</h2>
+      <div class="row g-3">
+        <article class="col-12 col-lg-4"><div class="rr-public-card"><h3 class="h6">Administrator</h3><p class="mb-0">Dashboard, accounts, all requests, areas, routes, inventory, distribution, and reports.</p></div></article>
+        <article class="col-12 col-lg-4"><div class="rr-public-card"><h3 class="h6">Relief coordinator</h3><p class="mb-0">Review requests, set status, organize routes, and monitor distribution. No user-account administration.</p></div></article>
+        <article class="col-12 col-lg-4"><div class="rr-public-card"><h3 class="h6">Barangay representative</h3><p class="mb-0">Submit and follow requests for their own barangay, and see related areas and deliveries.</p></div></article>
+      </div>
+      <p class="mt-4 mb-0">The supporting pages cover a calculated dashboard, sample routes, inventory with low-stock flags, reports with JSON and CSV export, and demo user accounts. Edits stay in this browser through localStorage. The original JSON files are the starting sample, and Export downloads a current copy.</p>
+    </section>
+  </main>
+  <footer class="border-top py-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-2 small text-secondary">
+      <p class="mb-0">ReliefRoute · Web Systems and Technologies prototype · Mogpog, Marinduque</p>
+      <a href="README.md">How to run the project</a>
+    </div>
+  </footer>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

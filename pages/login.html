@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sign in to the ReliefRoute classroom prototype.">
+  <title>Sign in · ReliefRoute</title>
+  <link rel="icon" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="login">
+  <p id="rr-boot" class="p-4 text-secondary">Loading ReliefRoute…</p>
+  <main class="rr-auth">
+    <div class="rr-auth-card">
+      <a class="rr-brand text-dark p-0 mb-3" href="../index.html">
+        <span class="rr-mark" aria-hidden="true"><i class="bi bi-signpost-2"></i></span>
+        <span><strong>ReliefRoute</strong><small class="text-secondary">People to a Safer Tomorrow</small></span>
+      </a>
+      <section class="rr-card p-4">
+        <h1 class="h4">Sign in</h1>
+        <p class="text-secondary">Use a demo account. This check happens in the browser and is not secure production authentication.</p>
+        <div id="loginAlert" class="alert alert-danger" role="alert" hidden></div>
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="loginUsername">Username</label>
+            <input class="form-control" id="loginUsername" name="username" autocomplete="username" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="loginPassword">Password</label>
+            <input class="form-control" id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <button class="btn btn-rr w-100" type="submit">Sign in</button>
+        </form>
+        <div class="d-grid gap-2 mt-3">
+          <button class="btn btn-outline-secondary" type="button" data-demo="admin|Admin@123">Fill administrator</button>
+          <button class="btn btn-outline-secondary" type="button" data-demo="coordinator|Coord@123">Fill relief coordinator</button>
+          <button class="btn btn-outline-secondary" type="button" data-demo="brgy.balanacan|Brgy@123">Fill Balanacan representative</button>
+          <button class="btn btn-outline-secondary" type="button" data-demo="inactive.user|Inactive@123">Fill inactive account</button>
+        </div>
+        <details class="mt-3">
+          <summary>Demo accounts and storage</summary>
+          <div class="table-responsive mt-2">
+            <table class="table table-sm mb-2">
+              <caption class="visually-hidden">Sample accounts for the prototype</caption>
+              <thead><tr><th>Role</th><th>Username</th><th>Password</th></tr></thead>
+              <tbody>
+                <tr><td>Administrator</td><td>admin</td><td>Admin@123</td></tr>
+                <tr><td>Relief Coordinator</td><td>coordinator</td><td>Coord@123</td></tr>
+                <tr><td>Barangay Representative, Balanacan</td><td>brgy.balanacan</td><td>Brgy@123</td></tr>
+                <tr><td>Barangay Representative, Bintakay</td><td>brgy.bintakay</td><td>Brgy@123</td></tr>
+                <tr><td>Inactive coordinator</td><td>inactive.user</td><td>Inactive@123</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small mb-0">Passwords are stored in plain text for the class demo. Records you add are saved in localStorage on this browser. Restoring sample data from the administrator menu reloads the original JSON files into the browser. It does not rewrite those files on disk.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      RR.boot();
+    });
+  </script>
+</body>
+</html>

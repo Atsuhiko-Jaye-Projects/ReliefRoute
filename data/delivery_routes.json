@@ -1,0 +1,74 @@
+[
+  {
+    "id": "RT-001",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Balanacan",
+    "personnel": "Delivery Team A (sample)",
+    "supplies": "Rice, canned goods, bottled water",
+    "status": "Out for Delivery",
+    "scheduledDate": "2026-11-10",
+    "notes": "Sample route for the Balanacan food-pack request. Road distance and travel time are not calculated.",
+    "relatedDistributionId": "DS-001",
+    "updatedAt": "2026-11-10T09:00:00+08:00"
+  },
+  {
+    "id": "RT-002",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Capayang",
+    "personnel": "Delivery Team B (sample)",
+    "supplies": "First-aid kits, hygiene kits",
+    "status": "Delivered",
+    "scheduledDate": "2026-11-06",
+    "notes": "Sample route marked delivered after distribution DS-002. No GPS track is stored.",
+    "relatedDistributionId": "DS-002",
+    "updatedAt": "2026-11-06T17:00:00+08:00"
+  },
+  {
+    "id": "RT-003",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Sayao",
+    "personnel": "Delivery Team A (sample)",
+    "supplies": "Rice, canned goods, and shelter materials noted by the coordinator",
+    "status": "Scheduled",
+    "scheduledDate": "2026-11-12",
+    "notes": "Sample future route. The date is a plan, not a confirmed dispatch.",
+    "relatedDistributionId": "DS-004",
+    "updatedAt": "2026-11-09T09:40:00+08:00"
+  },
+  {
+    "id": "RT-004",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Bintakay",
+    "personnel": "Delivery Team B (sample)",
+    "supplies": "Rice and canned goods",
+    "status": "Preparing",
+    "scheduledDate": "2026-11-11",
+    "notes": "Sample route still at the staging point while food packs are counted.",
+    "relatedDistributionId": "DS-006",
+    "updatedAt": "2026-11-10T08:20:00+08:00"
+  },
+  {
+    "id": "RT-005",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Gitnang Bayan",
+    "personnel": "Packing Team (sample)",
+    "supplies": "Blankets",
+    "status": "Delivered",
+    "scheduledDate": "2026-11-07",
+    "notes": "Sample completed route inside the poblacion. Distance is intentionally not shown.",
+    "relatedDistributionId": "DS-003",
+    "updatedAt": "2026-11-07T16:30:00+08:00"
+  },
+  {
+    "id": "RT-006",
+    "origin": "Mogpog Municipal Hall (sample staging point)",
+    "destination": "Sumangga",
+    "personnel": "Delivery Team A (sample)",
+    "supplies": "Bottled water",
+    "status": "Partially Delivered",
+    "scheduledDate": "2026-11-09",
+    "notes": "Sample route for a partial water drop. A return trip is not scheduled in this record.",
+    "relatedDistributionId": "DS-005",
+    "updatedAt": "2026-11-09T18:00:00+08:00"
+  }
+]

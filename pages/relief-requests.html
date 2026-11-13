@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Record and track disaster relief requests in ReliefRoute.">
+  <title>Relief Requests · ReliefRoute</title>
+  <link rel="icon" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="requests">
+  <p id="rr-boot" class="p-4 text-secondary">Loading ReliefRoute…</p>
+  <main id="page-root" class="rr-content" hidden>
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+      <div>
+        <h2 class="h4 mb-1">Request log</h2>
+        <p id="scopeNote" class="text-secondary mb-0"></p>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="exportJsonBtn">Export JSON</button>
+        <button type="button" class="btn btn-outline-secondary" id="exportCsvBtn">Export CSV</button>
+        <button type="button" class="btn btn-outline-secondary" id="importJsonBtn">Import JSON</button>
+        <input id="importJsonInput" type="file" accept="application/json,.json" hidden>
+        <button type="button" class="btn btn-rr" id="addBtn">New request</button>
+      </div>
+    </div>
+    <form class="rr-card p-3 mb-3" id="filterForm" role="search" aria-label="Filter relief requests">
+      <div class="row g-2 align-items-end">
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="filterQuery">Search</label>
+          <input class="form-control" id="filterQuery" name="q" type="search" placeholder="Reference, barangay, or assistance">
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label" for="filterStatus">Status</label>
+          <select class="form-select" id="filterStatus" name="status"></select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label" for="filterPriority">Priority</label>
+          <select class="form-select" id="filterPriority" name="priority"></select>
+        </div>
+        <div class="col-12 col-md-2" id="barangayFilterWrap">
+          <label class="form-label" for="filterBarangay">Barangay</label>
+          <select class="form-select" id="filterBarangay" name="barangay"></select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label" for="filterSort">Sort</label>
+          <select class="form-select" id="filterSort" name="sort">
+            <option value="newest">Newest date</option>
+            <option value="oldest">Oldest date</option>
+            <option value="priority">Priority</option>
+            <option value="families">Most families</option>
+            <option value="barangay">Barangay</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <button class="btn btn-outline-secondary w-100" type="button" id="resetFilters">Reset</button>
+        </div>
+      </div>
+    </form>
+    <section class="rr-card p-3" aria-labelledby="request-table-title">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h3 id="request-table-title" class="h6 mb-0">Records</h3>
+        <p id="resultCount" class="small text-secondary mb-0" aria-live="polite"></p>
+      </div>
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <caption class="visually-hidden">Relief requests</caption>
+          <thead>
+            <tr>
+              <th>Request</th><th>Barangay</th><th>Date</th><th>Assistance</th>
+              <th class="text-end">Families</th><th>Priority</th><th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <div id="pager"></div>
+    </section>
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="requestModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <form id="recordForm" novalidate>
+            <div class="modal-header">
+              <h2 class="modal-title h5" id="requestModalTitle">New relief request</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="formAlert" class="alert alert-danger" role="alert" tabindex="-1" hidden></div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="requestBarangay">Barangay</label>
+                  <select class="form-select" id="requestBarangay" name="barangay"></select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="requestDate">Request date</label>
+                  <input class="form-control" id="requestDate" name="requestDate" type="date" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="requestCategory">Type of assistance</label>
+                  <select class="form-select" id="requestCategory" name="category"></select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label" for="requestFamilies">Affected families</label>
+                  <input class="form-control" id="requestFamilies" name="affectedFamilies" type="number" min="1" max="20000" step="1" inputmode="numeric">
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label" for="requestPriority">Priority</label>
+                  <select class="form-select" id="requestPriority" name="priority"></select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="requestDescription">Situation</label>
+                  <textarea class="form-control" id="requestDescription" name="description" rows="4" maxlength="1000" required></textarea>
+                </div>
+              </div>
+              <div id="staffFields" class="row g-3 mt-1">
+                <div class="col-md-4">
+                  <label class="form-label" for="requestStatus">Status</label>
+                  <select class="form-select" id="requestStatus" name="status"></select>
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label" for="requestCoordinator">Assigned coordinator</label>
+                  <select class="form-select" id="requestCoordinator" name="assignedCoordinator"></select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="requestRemarks">Coordinator remarks</label>
+                  <textarea class="form-control" id="requestRemarks" name="remarks" rows="3" maxlength="500"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-rr">Save request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="viewTitle">Request</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="viewBody"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/relief-requests.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      RR.boot(function (user) { ReliefRequests.init(user); });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sample relief delivery routes for Mogpog. Distances are not calculated.">
+  <title>Delivery Routes · ReliefRoute</title>
+  <link rel="icon" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="routes">
+  <p id="rr-boot" class="p-4 text-secondary">Loading ReliefRoute…</p>
+  <main id="page-root" class="rr-content" hidden>
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+      <div>
+        <h2 class="h4 mb-1">Sample delivery routes</h2>
+        <p class="text-secondary mb-0">These routes name an origin, a destination barangay, personnel, and supplies. ReliefRoute does not calculate road distance, travel time, or live vehicle location.</p>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="exportJsonBtn">Export JSON</button>
+        <button type="button" class="btn btn-outline-secondary" id="exportCsvBtn">Export CSV</button>
+        <button type="button" class="btn btn-outline-secondary" id="importJsonBtn">Import JSON</button>
+        <input id="importJsonInput" type="file" accept="application/json,.json" hidden>
+        <button type="button" class="btn btn-rr" id="addBtn">New route</button>
+      </div>
+    </div>
+    <form class="rr-card p-3 mb-3" id="filterForm" role="search" aria-label="Filter routes">
+      <div class="row g-2 align-items-end">
+        <div class="col-12 col-md-5">
+          <label class="form-label" for="filterQuery">Search</label>
+          <input class="form-control" id="filterQuery" name="q" type="search" placeholder="Route, personnel, or supplies">
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label" for="filterStatus">Status</label>
+          <select class="form-select" id="filterStatus" name="status"></select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label" for="filterBarangay">Destination</label>
+          <select class="form-select" id="filterBarangay" name="barangay"></select>
+        </div>
+        <div class="col-12 col-md-2">
+          <button class="btn btn-outline-secondary w-100" type="button" id="resetFilters">Reset</button>
+        </div>
+      </div>
+    </form>
+    <p id="resultCount" class="small text-secondary" aria-live="polite"></p>
+    <div class="row g-3" id="routeList"></div>
+    <section class="rr-card p-3 mt-3" aria-labelledby="map-title">
+      <h2 id="map-title" class="h6">Municipal reference map</h2>
+      <div id="routeMap" class="rr-map" role="region" aria-label="Map centered on the Mogpog municipal reference point"></div>
+      <p id="mapNote" class="small text-secondary mt-2 mb-0">Loading the map…</p>
+    </section>
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="routeModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <form id="recordForm" novalidate>
+            <div class="modal-header">
+              <h2 class="modal-title h5" id="routeModalTitle">New delivery route</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="formAlert" class="alert alert-danger" role="alert" tabindex="-1" hidden></div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="routeOrigin">Origin</label>
+                  <input class="form-control" id="routeOrigin" name="origin" maxlength="160">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="routeDestination">Destination barangay</label>
+                  <select class="form-select" id="routeDestination" name="destination"></select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="routePersonnel">Assigned personnel</label>
+                  <input class="form-control" id="routePersonnel" name="personnel" maxlength="120">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="routeDate">Scheduled date</label>
+                  <input class="form-control" id="routeDate" name="scheduledDate" type="date">
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label" for="routeSupplies">Relief supplies</label>
+                  <input class="form-control" id="routeSupplies" name="supplies" maxlength="200">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="routeStatus">Status</label>
+                  <select class="form-select" id="routeStatus" name="status"></select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="routeDistribution">Linked distribution</label>
+                  <select class="form-select" id="routeDistribution" name="relatedDistributionId"></select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="routeNotes">Notes</label>
+                  <textarea class="form-control" id="routeNotes" name="notes" rows="3" maxlength="500"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-rr">Save route</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/leaflet/leaflet.js"></script>
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/delivery-routes.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      RR.boot(function (user) { DeliveryRoutes.init(user); });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "PA-001",
+    "barangay": "Balanacan",
+    "location": "Sample cluster near the Balanacan port road",
+    "affectedFamilies": 48,
+    "description": "Fictional demonstration scenario. Families in this sample cluster are waiting for food packs. This record is not an official severity rating.",
+    "priority": "High",
+    "assistanceNeeded": "Food packs, drinking water",
+    "status": "Assistance Scheduled",
+    "lastUpdated": "2026-11-10",
+    "relatedRequestId": "RR-2026-001"
+  },
+  {
+    "id": "PA-002",
+    "barangay": "Butansapa",
+    "location": "Sample low-lying households along the barangay road",
+    "affectedFamilies": 36,
+    "description": "Fictional demonstration scenario. Drinking water is the reported need. Priority was set by the demo coordinator, not by a scientific assessment.",
+    "priority": "Critical",
+    "assistanceNeeded": "Drinking water",
+    "status": "Awaiting Assistance",
+    "lastUpdated": "2026-11-08",
+    "relatedRequestId": "RR-2026-002"
+  },
+  {
+    "id": "PA-003",
+    "barangay": "Bintakay",
+    "location": "Sample puroks identified by the barangay representative",
+    "affectedFamilies": 54,
+    "description": "Fictional demonstration scenario. Food packs are being prepared. The area stays visible so the class can track a critical record that is not finished.",
+    "priority": "Critical",
+    "assistanceNeeded": "Food packs",
+    "status": "Assistance Scheduled",
+    "lastUpdated": "2026-11-10",
+    "relatedRequestId": "RR-2026-006"
+  },
+  {
+    "id": "PA-004",
+    "barangay": "Hinadharan",
+    "location": "Sample sitio reported by phone",
+    "affectedFamilies": 18,
+    "description": "Fictional demonstration scenario. The area is newly encoded and still needs a coordinator review.",
+    "priority": "Medium",
+    "assistanceNeeded": "Hygiene kits",
+    "status": "Needs Assessment",
+    "lastUpdated": "2026-11-09",
+    "relatedRequestId": "RR-2026-003"
+  },
+  {
+    "id": "PA-005",
+    "barangay": "Capayang",
+    "location": "Sample barangay health station",
+    "affectedFamilies": 15,
+    "description": "Fictional demonstration scenario. Requested medical and hygiene supplies were marked delivered in the distribution log.",
+    "priority": "High",
+    "assistanceNeeded": "First-aid kits, hygiene kits",
+    "status": "Assistance Delivered",
+    "lastUpdated": "2026-11-06",
+    "relatedRequestId": "RR-2026-005"
+  },
+  {
+    "id": "PA-006",
+    "barangay": "Sayao",
+    "location": "Sample households with reported roof damage",
+    "affectedFamilies": 27,
+    "description": "Fictional demonstration scenario. Shelter materials are scheduled. This is not a building inspection.",
+    "priority": "High",
+    "assistanceNeeded": "Temporary shelter materials",
+    "status": "Assistance Scheduled",
+    "lastUpdated": "2026-11-09",
+    "relatedRequestId": "RR-2026-007"
+  },
+  {
+    "id": "PA-007",
+    "barangay": "Sumangga",
+    "location": "Sample cluster near the barangay hall",
+    "affectedFamilies": 40,
+    "description": "Fictional demonstration scenario. A partial water delivery was recorded. Food packs are still pending, so the area remains open.",
+    "priority": "Medium",
+    "assistanceNeeded": "Food packs, drinking water",
+    "status": "Assistance Scheduled",
+    "lastUpdated": "2026-11-09",
+    "relatedRequestId": "RR-2026-009"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "USR-001",
+    "fullName": "Demo Administrator",
+    "username": "admin",
+    "password": "Admin@123",
+    "role": "administrator",
+    "barangay": "",
+    "status": "active",
+    "email": "admin.demo@reliefroute.local"
+  },
+  {
+    "id": "USR-002",
+    "fullName": "Demo Coordinator",
+    "username": "coordinator",
+    "password": "Coord@123",
+    "role": "coordinator",
+    "barangay": "",
+    "status": "active",
+    "email": "coordinator.demo@reliefroute.local"
+  },
+  {
+    "id": "USR-003",
+    "fullName": "Balanacan Demo Representative",
+    "username": "brgy.balanacan",
+    "password": "Brgy@123",
+    "role": "barangay",
+    "barangay": "Balanacan",
+    "status": "active",
+    "email": "balanacan.demo@reliefroute.local"
+  },
+  {
+    "id": "USR-004",
+    "fullName": "Bintakay Demo Representative",
+    "username": "brgy.bintakay",
+    "password": "Brgy@123",
+    "role": "barangay",
+    "barangay": "Bintakay",
+    "status": "active",
+    "email": "bintakay.demo@reliefroute.local"
+  },
+  {
+    "id": "USR-005",
+    "fullName": "Inactive Demo Account",
+    "username": "inactive.user",
+    "password": "Inactive@123",
+    "role": "coordinator",
+    "barangay": "",
+    "status": "inactive",
+    "email": "inactive.demo@reliefroute.local"
+  }
+]
